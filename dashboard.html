@@ -4,22 +4,10 @@
   <meta charset="UTF-8" />
   <title>Dashboard | Teck</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <script src"/Teck-personnal/includes/header-script.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-top">
-    <h2>Dashboard</h2>
-    <p>           </p>
-  
-    <button class="logout-btn" onclick="logout()">Uitloggen</button>
-    </div>
-
-      <p>Welkom,</p>
-    <p><span id="userDisplay"></span></p>
-    <p>           </p>
-    <p id="roleInfo"></p>
-
-  </header>
+<body data-tile="Dashboard | Teck">
   <div id="nav-placeholder"></div>
 
   <div class="button-grid">
@@ -97,10 +85,6 @@
       window.location.href = 'login.html';
     }
 
-    fetch('nav.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('nav-placeholder').innerHTML = html;
     });
   </script>
 </body>
