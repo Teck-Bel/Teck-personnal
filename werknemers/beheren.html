@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <title>Werknemers Beheren</title>
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Firebase App -->
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <!-- Firebase Firestore -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- HEADER SCRIPT -->
+  <script src="/Teck-personnal/includes/header-script.js" defer></script>
 </head>
-<body>
-  <nav id="main-nav"></nav>
+
+<body data-title="Werknemers beheren">
+
+  <!-- HEADER WORDT HIER INGEZET -->
+  <div id="header-placeholder"></div>
 
   <main class="content">
     <h1>Werknemers beheren</h1>
@@ -27,9 +33,7 @@
             <th>Actie</th>
           </tr>
         </thead>
-        <tbody id="werknemerTableBody">
-          <!-- Werknemers worden hier geladen -->
-        </tbody>
+        <tbody id="werknemerTableBody"></tbody>
       </table>
     </section>
 
@@ -79,8 +83,7 @@
             <td>
               <button onclick="bewerkWerknemer('${doc.id}', '${wn.naam}', '${wn.functie}', '${wn.email}')">✏️</button>
               <button onclick="verwijderWerknemer('${doc.id}')">🗑️</button>
-            </td>
-          `;
+            </td>`;
           werknemerTbody.appendChild(tr);
         });
       });
@@ -90,19 +93,21 @@
 
     werknemerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const naam = document.getElementById('werknemerNaam').value.trim();
-      const functie = document.getElementById('werknemerFunctie').value.trim();
-      const email = document.getElementById('werknemerEmail').value.trim();
 
-      if (naam && functie && email) {
-        const data = { naam, functie, email, updatedAt: firebase.firestore.FieldValue.serverTimestamp() };
+      const naam = werknemerNaam.value.trim();
+      const functie = werknemerFunctie.value.trim();
+      const email = werknemerEmail.value.trim();
 
-        if (bewerkWerknemerId) {
-          db.collection('werknemers').doc(bewerkWerknemerId).update(data).then(resetWerknemerForm);
-        } else {
-          data.createdAt = firebase.firestore.FieldValue.serverTimestamp();
-          db.collection('werknemers').add(data).then(resetWerknemerForm);
-        }
+      if (bewerkWerknemerId) {
+        db.collection('werknemers').doc(bewerkWerknemerId)
+          .update({ naam, functie, email, updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+          .then(resetWerknemerForm);
+      } else {
+        db.collection('werknemers').add({
+          naam, functie, email,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(resetWerknemerForm);
       }
     });
 
@@ -113,9 +118,9 @@
     }
 
     function bewerkWerknemer(id, naam, functie, email) {
-      document.getElementById('werknemerNaam').value = naam;
-      document.getElementById('werknemerFunctie').value = functie;
-      document.getElementById('werknemerEmail').value = email;
+      werknemerNaam.value = naam;
+      werknemerFunctie.value = functie;
+      werknemerEmail.value = email;
       bewerkWerknemerId = id;
       werknemerFormTitel.textContent = "Werknemer bewerken";
       annuleerBtn.style.display = "inline-block";
@@ -129,12 +134,7 @@
     }
 
     annuleerBtn.addEventListener('click', resetWerknemerForm);
-
-    fetch('nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('main-nav').innerHTML = data;
-      });
   </script>
+
 </body>
 </html>
