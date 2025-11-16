@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("/Teck-personanal/includes/header.html")
+  fetch("/Teck-personnal/includes/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
