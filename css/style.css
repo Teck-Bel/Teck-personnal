@@ -156,18 +156,21 @@ button:hover {
 
 /* Header blijft 1 rij */
 .site-header {
-  display: 100%;
+  width: 100%;
   background-color: #003366;
   padding: 10px 20px;
   display:flex;
-  felx-direction: colum;
+  flex-direction: column;
   gap: 10px;
+  box-sizing: border-box;
 }
 
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  gap: 20px;
 }
 
 .top-nav {
@@ -176,16 +179,22 @@ button:hover {
 
 .top-nav ul {
   display: flex;
-  flex-direction: row;
   gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 /* Zorg dat knoppen naast elkaar blijven */
 .nav-button {
   white-space: nowrap;
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: white;
+  background-color: #415A77;
+  border-radius: 5px;
 }
 
 .nav-button:hover {
