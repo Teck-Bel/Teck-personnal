@@ -178,54 +178,53 @@ button:hover {
   width: auto;
 }
 
-/* Dropdown menu */
+/* Dropdown hoofdmenu */
 .dropdown, .sub-dropdown {
-  position: relative;
+  position: relative; /* essentieel voor absolute submenu's */
 }
 
-.dropdown-menu {
-  display: none;
+.dropdown-menu, .sub-dropdown-menu {
+  display: none;        /* standaard verborgen */
   position: absolute;
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 1000;
-  background-color: #415A77;
   border-radius: 0.5rem;
   padding: 0.5rem 0;
+  background-color: #415A77;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 999;
 }
 
-.dropdown:hover .dropdown-menu {
+/* Dropdown zichtbaar bij hover */
+.dropdown:hover > .dropdown-menu,
+.sub-dropdown:hover > .sub-dropdown-menu {
   display: block;
 }
 
-.dropdown-menu li {
-  width: 100%;
+/* Dropdown items */
+.dropdown-menu li, .sub-dropdown-menu li {
+  padding: 0;
 }
 
-.dropdown-menu .nav-button {
+.dropdown-menu .nav-button, 
+.sub-dropdown-menu .nav-button {
   display: block;
   width: 100%;
-  padding: 8px 12px;
-  text-decoration: none;
+  padding: 10px 16px;
+  text-align: left;
+  border-radius: 0;
   color: white;
+  background-color: transparent;
 }
 
-.dropdown-menu .nav-button:hover {
-  background-color: #778DA9;
+.dropdown-menu .nav-button:hover, 
+.sub-dropdown-menu .nav-button:hover {
+  background-color: #1565c0;
 }
 
+/* Submenu naar rechts */
 .sub-dropdown-menu {
-  display: none;
-  position: absolute;
   top: 0;
   left: 100%;
-  min-width: 180px;
-  border-radius: 0.5rem;
-  padding: 0.5rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.sub-dropdown:hover .sub-dropdown-menu {
-  display: block;
 }
