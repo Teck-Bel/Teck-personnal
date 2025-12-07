@@ -16,7 +16,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
-  <nav id="main-nav"></nav>
+  <div id="header-placeholder"></div>
 
   <div class="todo-container">
     <h2>Todo lijst</h2>
@@ -25,7 +25,7 @@
       <button type="submit" class="add-btn">+</button>
     </form>
     <ul id="todoList"></ul>
-    <button onclick="goBack()" style="margin-top:1rem; background:#778DA9; color:white; padding:0.5rem 1rem; border:none; border-radius:0.5rem; cursor:pointer;">
+    <button onclick="toDashboard()" style="margin-top:1rem; background:#778DA9; color:white; padding:0.5rem 1rem; border:none; border-radius:0.5rem; cursor:pointer;">
       Terug naar dashboard
     </button>
   </div>
@@ -61,8 +61,8 @@
       });
 
     // Terug naar dashboard
-    function goBack() {
-      window.location.href = 'dashboard.html';
+    function toDashboard() {
+      window.location.href = '/Teck-personnal/dashboard.html';
     }
 
     // User login check
@@ -141,5 +141,6 @@
       todoInput.value = '';
     });
   </script>
+  <script src="/Teck-personnal/includes/header-script.js"></script>
 </body>
 </html>
