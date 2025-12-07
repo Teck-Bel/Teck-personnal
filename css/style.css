@@ -46,7 +46,7 @@ button:hover {
 
 .container-login {
   width: 100vw;
-  height: 100hw;
+  height: 100vhw;
   padding: 2rem;
   background-color: #1B263B;
   border-radius: 1rem;
@@ -179,11 +179,12 @@ button:hover {
 
 .top-nav ul {
   display: flex;
+  flex-direction: row;
   gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 /* Zorg dat knoppen naast elkaar blijven */
@@ -198,7 +199,7 @@ button:hover {
 }
 
 .nav-button:hover {
-  background-color: #1565c0;
+  background-color: #778DA9;
 }
 
 /* Logo kleiner maken */
