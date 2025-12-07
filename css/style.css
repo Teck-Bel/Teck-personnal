@@ -1,0 +1,231 @@
+/* style.css - Teck huisstijl */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0D1B2A;
+  color: white;
+}
+
+.container {
+  width: 100vw;
+  height: 50px;
+  padding: 2rem;
+  background-color: #1B263B;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+}
+
+input {
+  background-color: white;
+  color: black;
+}
+
+button {
+  background-color: #415A77;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #778DA9;
+}
+
+.container-login {
+  width: 100vw;
+  height: 100vh; /* was 100hw */
+  padding: 2rem;
+  background-color: #1B263B;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Extra stijlen voor index.html */
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background-color: #778DA9;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #A9BCD0;
+}
+
+/* Todo en dashboard styling blijft gelijk... */
+/* ... (hier kun je alles van todo-container, form, ul, li, button-grid etc behouden) */
+
+/* Header blijft 1 rij */
+.site-header {
+  width: 100%;
+  background-color: #003366;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo links, user info rechts */
+  width: 100%;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+#page-title {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.header-user-info button {
+  background-color: #415A77;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header-user-info button:hover {
+  background-color: #778DA9;
+}
+
+/* Navigatiebalk */
+.top-nav {
+  width: 100%;
+}
+
+.top-nav ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* voor mobiel */
+}
+
+/* Knoppen */
+.nav-button {
+  white-space: nowrap;
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: white;
+  background-color: #415A77;
+  border-radius: 5px;
+}
+
+.nav-button:hover {
+  background-color: #1565c0;
+}
+
+/* Logo */
+.site-header img {
+  height: 50px;
+  width: auto;
+}
+
+/* Dropdown menu */
+.dropdown, .sub-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  z-index: 1000;
+  background-color: #415A77;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu .nav-button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown-menu .nav-button:hover {
+  background-color: #778DA9;
+}
+
+.sub-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.sub-dropdown:hover .sub-dropdown-menu {
+  display: block;
+}
