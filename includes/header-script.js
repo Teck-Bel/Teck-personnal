@@ -17,5 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (logoSrc && logoElement) {
         logoElement.src = logoSrc;
       }
+
+      // Belangrijk: event uitsturen dat de header klaar is
+      document.dispatchEvent(new Event("headerLoaded"));
     });
 });
