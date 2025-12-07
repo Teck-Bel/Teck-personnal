@@ -156,12 +156,40 @@ button:hover {
 
 /* Header blijft 1 rij */
 .site-header {
+  display: 100%;
+  background-color: #003366;
+  padding: 10px 20px;
+  display:flex;
+  felx-direction: colum;
+  gap: 10px;
+}
+
+.header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #003366;
-  padding: 20px;
-  flex-wrap: nowrap; /* voorkomt dat alles onder elkaar valt */
+}
+
+.top-nav {
+  width: 100%;
+}
+
+.top-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Zorg dat knoppen naast elkaar blijven */
+.nav-button {
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background-color: #1565c0;
 }
 
 /* Logo kleiner maken */
@@ -193,35 +221,6 @@ button:hover {
 
 .logout-btn:hover {
   background-color: #778DA9;
-}
-
-.header-top {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.top-nav {
-  width: 100%;
-}
-
-.top-nav ul {
-  display: flex !important;
-  flex-direction: row;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Zorg dat knoppen naast elkaar blijven */
-.nav-button {
-  white-space: nowrap;
-}
-
-.nav-button:hover {
-  background-color: #1565c0;
 }
 
 /* Prijslijst tabel styling */
