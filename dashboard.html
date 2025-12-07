@@ -53,11 +53,13 @@
   </div>
 
   <script>
-    // Haal gebruiker op en converteer JSON naar object
-    const userData = sessionStorage.getItem('teckUser');
-    if (!userData) {
-      window.location.href = 'login.html';
-    } else {
+    document.addEventListener("headerLoaded", () => {
+      
+      // Haal gebruiker op en converteer JSON naar object
+      const userData = sessionStorage.getItem('teckUser');
+      if (!userData) {
+        window.location.href = 'login.html';
+      }
       const teckUser = JSON.parse(userData);
 
       // Toon naam
@@ -76,7 +78,6 @@
         console.log("Je bent geen admin");
         // je zou hier ook bepaalde elementen kunnen verbergen
       }
-    }
 
     function logout() {
       sessionStorage.removeItem('teckUser');
